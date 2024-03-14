@@ -1,22 +1,25 @@
-import { Copyright, Links, StyledFooter } from "./footerStyle";
-
-export const Footer = () => {
+import icon from "./s-s.svg";
+import {
+  Border,
+  FooterContainer,
+  FrontText,
+  Logo,
+  Text,
+} from "./CardBusiness.style";
+export const Footer = ({ website = "My Website" }) => {
   return (
-    <StyledFooter>
-      <Copyright>
-        &copy; {new Date().getFullYear()} My Website. All rights reserved.
-      </Copyright>
-      <Links>
-        <Copyright>
-          Created by{" "}
-          <a
-            href="https://www.linkedin.com/in/sebasti%C3%A1nsiman/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Sebastián Siman
-          </a>
-        </Copyright>
+    <FooterContainer>
+      <FrontText>
+        <span>By Sebastián Siman</span>
+        <div>
+          <p>{website}</p>
+          <p>&copy; {new Date().getFullYear()}</p>
+        </div>
+      </FrontText>
+      <Border />
+      <Logo src={icon} alt="Logo" />
+
+      <Text>
         <a
           href="https://seebaasiman.github.io/Sebastian.Siman/"
           target="_blank"
@@ -25,20 +28,13 @@ export const Footer = () => {
           Website
         </a>
         <a
-          href="https://github.com/SeebaaSiman"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Github
-        </a>
-        <a
           href="mailto:seebaasiman@gmail.com"
           target="_blank"
           rel="noopener noreferrer"
         >
-          Contact
+          contact
         </a>
-      </Links>
-    </StyledFooter>
+      </Text>
+    </FooterContainer>
   );
 };
